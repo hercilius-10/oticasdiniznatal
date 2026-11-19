@@ -126,9 +126,15 @@ header{background:var(--red);position:sticky;top:0;z-index:10}
 
 /* lojas */
 .lojas .grid4{grid-template-columns:repeat(3,1fr)}
-.loja{background:var(--bg);border-radius:var(--r);padding:22px}
+.loja{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:22px;display:flex;flex-direction:column;gap:2px}
 .loja h3{font-size:16px;margin-bottom:4px}
 .loja p{font-size:13px;color:var(--muted)}
+.loja .pri{align-self:flex-start}
+.loja .hr{margin-top:8px;color:var(--ink)}
+.loja .acoes{margin-top:auto;padding-top:14px;display:flex;flex-wrap:wrap;gap:6px 18px}
+.loja a.m{font-size:13px;font-weight:600;color:var(--red);text-decoration:none;border-bottom:2px solid transparent}
+.loja a.m:hover{border-color:var(--red)}
+.lojas .fonte{font-size:12px;color:var(--muted);margin-top:18px}
 .loja .pri{display:inline-block;font-size:11px;font-weight:600;color:var(--red);background:#FDECEC;border-radius:var(--pill);padding:2px 10px;margin-bottom:8px}
 
 /* form */
@@ -302,21 +308,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- LOJAS -->
-<section class="lojas" style="background:var(--bg)">
-  <div class="wrap">
-    <h2>Encontre a Diniz mais perto de você</h2>
-    <p class="sub">Lojas em Natal e região metropolitana. Escolha a sua no formulário e a gente confirma o horário.</p>
-    <div class="grid4">
-      <!-- TODO: preencher endereços, horários e links do Google Maps de cada loja (⬜ aguardando cliente) -->
-      <!-- Alecrim encerra em 30/11/2026 (decisão da cliente, 17/11): fora da lista -->
-      <div class="loja"><span class="pri">Natal</span><h3>Centro</h3><p>Endereço e horário a confirmar</p></div>
-      <div class="loja"><span class="pri">Grande Natal</span><h3>Parnamirim</h3><p>Endereço e horário a confirmar</p></div>
-      <div class="loja"><span class="pri">Natal</span><h3>Convenção</h3><p>Endereço e horário a confirmar</p></div>
-    </div>
-  </div>
-</section>
-
 <!-- AGENDAR -->
 <section class="agenda" id="agendar">
   <div class="wrap">
@@ -329,7 +320,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <label>Seu nome<input name="nome" required autocomplete="name" placeholder="Como podemos te chamar?"></label>
       <label>Loja de preferência
         <select name="loja">
-          <option>Centro</option><option>Parnamirim</option><option>Convenção</option><option>Outra / ainda não sei</option>
+          <option>Cidade Alta (Centro)</option><option>Parnamirim (Centro)</option><option>Rio Grande Mall</option><option>Shopping Cidade Jardim</option><option>Lagoa Center</option><option>Outra / ainda não sei</option>
         </select>
       </label>
       <label>O que você procura?
@@ -354,6 +345,52 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <details><summary>Quais formas de pagamento?</summary><p>Cartão em até 10x sem juros, desconto à vista e crediário na conta de energia em até 12x. Consulte as condições com o consultor.</p></details>
   </div>
 </section>
+
+<!-- ONDE ENCONTRAR (endereços e horários conforme as fichas do Google Meu Negócio, conferidos em 19/11/2026) -->
+<section class="lojas" id="lojas" style="background:var(--bg)">
+  <div class="wrap">
+    <h2>Encontre a Diniz mais perto de você</h2>
+    <p class="sub">Endereço e horário de cada loja, conforme o Google Maps. Toque em Como chegar para abrir a rota no celular.</p>
+    <div class="grid4">
+      <article class="loja" data-loja="Cidade Alta">
+        <span class="pri">Natal</span>
+        <h3>Cidade Alta</h3>
+        <p>Av. Rio Branco, 564<br>Centro, Natal</p>
+        <p class="hr">Seg a sex, 8h às 18h<br>Sáb, 8h às 13h</p>
+        <div class="acoes"><a class="m" href="https://maps.google.com/maps?cid=8819513797198852148" target="_blank" rel="noopener" data-maps="ficha">Ver no Google Maps</a><a class="m" href="https://www.google.com/maps/dir/?api=1&amp;destination=Avenida%20Rio%20Branco%2C%20564%2C%20Centro%2C%20Natal%2C%20RN&amp;destination_place_id=ChIJXYtwU3IAswcRNLCxHRI1ZXo" target="_blank" rel="noopener" data-maps="rota">Como chegar</a></div>
+      </article>
+      <article class="loja" data-loja="Parnamirim">
+        <span class="pri">Grande Natal</span>
+        <h3>Parnamirim</h3>
+        <p>Av. Brigadeiro Everaldo Breves, 218<br>Centro, Parnamirim</p>
+        <p class="hr">Seg a sex, 8h às 18h<br>Sáb, 8h às 13h</p>
+        <div class="acoes"><a class="m" href="https://maps.google.com/maps?cid=11625766737432372732" target="_blank" rel="noopener" data-maps="ficha">Ver no Google Maps</a><a class="m" href="https://www.google.com/maps/dir/?api=1&amp;destination=Avenida%20Brigadeiro%20Everaldo%20Breves%2C%20218%2C%20Centro%2C%20Parnamirim%2C%20RN&amp;destination_place_id=ChIJ0VzJeglXsgcR_GU1ckAFV6E" target="_blank" rel="noopener" data-maps="rota">Como chegar</a></div>
+      </article>
+      <article class="loja" data-loja="Rio Grande Mall">
+        <span class="pri">Grande Natal</span>
+        <h3>Rio Grande Mall</h3>
+        <p>Av. Ayrton Senna, 2441, loja 01<br>Nova Parnamirim, Parnamirim</p>
+        <p class="hr">Seg a sáb, 10h às 20h<br>Dom, 15h às 20h</p>
+        <div class="acoes"><a class="m" href="https://maps.google.com/maps?cid=10694398484046303649" target="_blank" rel="noopener" data-maps="ficha">Ver no Google Maps</a><a class="m" href="https://www.google.com/maps/dir/?api=1&amp;destination=Avenida%20Ayrton%20Senna%2C%202441%2C%20Rio%20Grande%20Mall%2C%20Parnamirim%2C%20RN&amp;destination_place_id=ChIJKUC4c6iqswcRoVEOiMIiapQ" target="_blank" rel="noopener" data-maps="rota">Como chegar</a></div>
+      </article>
+      <article class="loja" data-loja="Shopping Cidade Jardim">
+        <span class="pri">Natal</span>
+        <h3>Shopping Cidade Jardim</h3>
+        <p>Av. Eng. Roberto Freire, 340, loja 04<br>Capim Macio, Natal</p>
+        <p class="hr">Seg a sáb, 9h às 21h<br>Dom, 14h às 20h</p>
+        <div class="acoes"><a class="m" href="https://maps.google.com/maps?cid=9888498374512134737" target="_blank" rel="noopener" data-maps="ficha">Ver no Google Maps</a><a class="m" href="https://www.google.com/maps/dir/?api=1&amp;destination=Avenida%20Engenheiro%20Roberto%20Freire%2C%20340%2C%20Shopping%20Cidade%20Jardim%2C%20Natal%2C%20RN&amp;destination_place_id=ChIJ7aBLEWX_sgcRUcrSTuEAO4k" target="_blank" rel="noopener" data-maps="rota">Como chegar</a></div>
+      </article>
+      <article class="loja" data-loja="Lagoa Center">
+        <span class="pri">Natal</span>
+        <h3>Lagoa Center</h3>
+        <p>Av. Antônio Basílio, 3006, loja 36<br>Lagoa Nova, Natal</p>
+        <p class="hr">Seg a sex, 8h às 17h<br>Sáb, 8h às 12h</p>
+        <div class="acoes"><a class="m" href="https://maps.google.com/maps?cid=8932502514743252668" target="_blank" rel="noopener" data-maps="ficha">Ver no Google Maps</a><a class="m" href="https://www.google.com/maps/dir/?api=1&amp;destination=Avenida%20Ant%C3%B4nio%20Bas%C3%ADlio%2C%203006%2C%20Lagoa%20Center%2C%20Natal%2C%20RN&amp;destination_place_id=ChIJXYtwU3IAswcRvBaO8rWf9ns" target="_blank" rel="noopener" data-maps="rota">Como chegar</a></div>
+      </article>
+    </div>
+    <p class="fonte">Horários regulares. Em feriados e datas especiais podem mudar; confira no Google Maps ou com a central.</p>
+  </div>
+</section>
 </main>
 
 <footer>
@@ -375,6 +412,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   fab.href=wa('Olá! Vim pelo site da '+MARCA+' Natal e quero ser atendido.');
   fab.target='_blank'; fab.rel='noopener';
   fab.addEventListener('click',function(){window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:'whatsapp_click',origem:'lp_fab',marca:'diniz'});});
+  document.querySelectorAll('a[data-maps]').forEach(function(a){
+    a.addEventListener('click',function(){
+      window.dataLayer=window.dataLayer||[];
+      window.dataLayer.push({event:'maps_click',marca:'diniz',loja:a.closest('.loja').getAttribute('data-loja'),tipo:a.getAttribute('data-maps')});
+    });
+  });
   document.getElementById('lead').addEventListener('submit',function(e){
     e.preventDefault();
     var f=e.target, nome=f.nome.value.trim();

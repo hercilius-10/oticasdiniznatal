@@ -116,7 +116,9 @@ header{position:sticky;top:0;z-index:10;background:#fff;border-bottom:2px solid 
 .stars{color:var(--gold);letter-spacing:2px;font-size:14px}
 .loja h3{font-size:22px}
 .loja p{font-size:14px;color:var(--muted)}
-.loja a.m{margin-top:auto;padding-top:14px;font:700 14px Nunito,sans-serif;color:var(--brand);text-decoration:none;border-bottom:2px solid transparent;align-self:flex-start}
+.loja .hr{color:var(--black);margin-top:6px}
+.loja .acoes{margin-top:auto;padding-top:14px;display:flex;flex-wrap:wrap;gap:8px 20px}
+.loja a.m{font:700 14px Nunito,sans-serif;color:var(--brand);text-decoration:none;border-bottom:2px solid transparent}
 .loja a.m:hover{border-color:var(--brand)}
 .fonte{font-size:12px;color:var(--muted);margin-top:18px}
 
@@ -249,35 +251,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<section class="lojas" id="lojas">
-  <div class="wrap">
-    <span class="eyebrow">Lojas Prime em Natal</span>
-    <h2>Três endereços, a mesma experiência.</h2>
-    <p class="sub">Veja a avaliação de quem já foi atendido em cada loja e escolha a mais perto de você.</p>
-    <div class="g3">
-      <article class="loja">
-        <div class="nota"><b>5,0</b><div><div class="stars" aria-label="5 estrelas">★★★★★</div><span>176 avaliações no Google</span></div></div>
-        <h3>Prime Afonso Pena</h3>
-        <p>Av. Afonso Pena, 1208A<br>Tirol, Natal</p>
-        <a class="m" href="https://www.google.com/maps/search/?api=1&query=%C3%93ticas+Diniz+Prime+Av.+Afonso+Pena+1208A+Natal" target="_blank" rel="noopener">Ver no mapa →</a>
-      </article>
-      <article class="loja">
-        <div class="nota"><b>5,0</b><div><div class="stars" aria-label="5 estrelas">★★★★★</div><span>719 avaliações no Google</span></div></div>
-        <h3>Prime Rua Mossoró</h3>
-        <p>Rua Mossoró, 602<br>Tirol, Natal</p>
-        <a class="m" href="https://www.google.com/maps/search/?api=1&query=%C3%93ticas+Diniz+Prime+Rua+Mossor%C3%B3+602+Natal" target="_blank" rel="noopener">Ver no mapa →</a>
-      </article>
-      <article class="loja">
-        <div class="nota"><b>4,6</b><div><div class="stars" aria-label="4,6 estrelas">★★★★★</div><span>50 avaliações no Google</span></div></div>
-        <h3>Prime Midway Mall</h3>
-        <p>Midway Mall, piso 1, lojas 136/136A<br>Av. Bernardo Vieira, 3775, Tirol, Natal</p>
-        <a class="m" href="https://www.google.com/maps/search/?api=1&query=%C3%93ticas+Diniz+Prime+Midway+Mall+Natal" target="_blank" rel="noopener">Ver no mapa →</a>
-      </article>
-    </div>
-    <p class="fonte">Notas e número de avaliações do Google Maps em 15/11/2026. Horários de funcionamento: <!-- TODO confirmar com a cliente -->consulte a loja.</p>
-  </div>
-</section>
-
 <section class="agenda" id="agendar">
   <div class="wrap">
     <div>
@@ -311,6 +284,39 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <details><summary>A garantia vale em outras cidades?</summary><p>Sim. A garantia é nacional e vale em qualquer loja da rede Diniz.</p></details>
   </div>
 </section>
+
+<!-- LOJAS (endereços e horários conforme as fichas do Google Meu Negócio, conferidos em 19/11/2026) -->
+<section class="lojas" id="lojas">
+  <div class="wrap">
+    <span class="eyebrow">Lojas Prime em Natal</span>
+    <h2>Três endereços, a mesma experiência.</h2>
+    <p class="sub">Veja a avaliação de quem já foi atendido em cada loja e escolha a mais perto de você.</p>
+    <div class="g3">
+      <article class="loja" data-loja="Afonso Pena">
+        <div class="nota"><b>5,0</b><div><div class="stars" aria-label="5 estrelas">★★★★★</div><span>176 avaliações no Google</span></div></div>
+        <h3>Prime Afonso Pena</h3>
+        <p>Av. Afonso Pena, 1208A<br>Tirol, Natal</p>
+        <p class="hr">Seg a sex, 8h às 18h<br>Sáb, 8h às 12h</p>
+        <div class="acoes"><a class="m" href="https://maps.google.com/maps?cid=3715895824684202730" target="_blank" rel="noopener" data-maps="ficha">Ver no Google Maps</a><a class="m" href="https://www.google.com/maps/dir/?api=1&amp;destination=Avenida%20Afonso%20Pena%2C%201208A%2C%20Tirol%2C%20Natal%2C%20RN&amp;destination_place_id=ChIJHdw309oBswcR6rqonJCDkTM" target="_blank" rel="noopener" data-maps="rota">Como chegar</a></div>
+      </article>
+      <article class="loja" data-loja="Rua Mossoró">
+        <div class="nota"><b>5,0</b><div><div class="stars" aria-label="5 estrelas">★★★★★</div><span>719 avaliações no Google</span></div></div>
+        <h3>Prime Rua Mossoró</h3>
+        <p>Rua Mossoró, 602<br>Tirol, Natal</p>
+        <p class="hr">Seg a sex, 8h às 18h<br>Sáb, 8h às 13h</p>
+        <div class="acoes"><a class="m" href="https://maps.google.com/maps?cid=10811300140235725378" target="_blank" rel="noopener" data-maps="ficha">Ver no Google Maps</a><a class="m" href="https://www.google.com/maps/dir/?api=1&amp;destination=Rua%20Mossor%C3%B3%2C%20602%2C%20Tirol%2C%20Natal%2C%20RN&amp;destination_place_id=ChIJzSA3qRQAswcRQprhYjJ0CZY" target="_blank" rel="noopener" data-maps="rota">Como chegar</a></div>
+      </article>
+      <article class="loja" data-loja="Midway Mall">
+        <div class="nota"><b>4,6</b><div><div class="stars" aria-label="4,6 estrelas">★★★★★</div><span>50 avaliações no Google</span></div></div>
+        <h3>Prime Midway Mall</h3>
+        <p>Midway Mall, piso 1, lojas 136/136A<br>Av. Bernardo Vieira, 3775, Tirol, Natal</p>
+        <p class="hr">Seg a sáb, 10h às 22h<br>Dom, 14h às 20h</p>
+        <div class="acoes"><a class="m" href="https://maps.google.com/maps?cid=12657747159505183780" target="_blank" rel="noopener" data-maps="ficha">Ver no Google Maps</a><a class="m" href="https://www.google.com/maps/dir/?api=1&amp;destination=Avenida%20Bernardo%20Vieira%2C%203775%2C%20Midway%20Mall%2C%20Natal%2C%20RN&amp;destination_place_id=ChIJeb2iVfr_sgcRJCQEW_pZqa8" target="_blank" rel="noopener" data-maps="rota">Como chegar</a></div>
+      </article>
+    </div>
+    <p class="fonte">Notas e número de avaliações do Google Maps em 15/11/2026. Horários regulares; em feriados e datas especiais podem mudar, confira no Google Maps.</p>
+  </div>
+</section>
 </main>
 
 <footer>
@@ -332,6 +338,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   fab.href=wa('Olá! Vim pelo site da '+MARCA+' Natal e quero agendar meu atendimento.');
   fab.target='_blank'; fab.rel='noopener';
   fab.addEventListener('click',function(){window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:'whatsapp_click',origem:'lp_fab',marca:'prime'});});
+  document.querySelectorAll('a[data-maps]').forEach(function(a){
+    a.addEventListener('click',function(){
+      window.dataLayer=window.dataLayer||[];
+      window.dataLayer.push({event:'maps_click',marca:'prime',loja:a.closest('.loja').getAttribute('data-loja'),tipo:a.getAttribute('data-maps')});
+    });
+  });
   document.getElementById('lead').addEventListener('submit',function(e){
     e.preventDefault();
     var f=e.target, nome=f.nome.value.trim();
