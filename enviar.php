@@ -22,6 +22,7 @@ $orig = (string)($_SERVER['HTTP_ORIGIN'] ?? '');
 if ($orig !== '' && stripos($orig, $host) === false) sair(403, ['ok' => false]);
 
 function limpa(string $s, int $max): string {
+    if (!mb_check_encoding($s, 'UTF-8')) $s = mb_convert_encoding($s, 'UTF-8', 'Windows-1252');
     $s = preg_replace('/[\x00-\x1F\x7F]+/u', ' ', $s) ?? '';
     $s = trim(preg_replace('/\s+/u', ' ', $s) ?? '');
     return mb_substr($s, 0, $max);
