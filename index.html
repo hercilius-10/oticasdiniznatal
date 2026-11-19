@@ -317,6 +317,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p>Avise na loja que veio pelo online para garantir seu atendimento.</p>
     </div>
     <form id="lead" novalidate>
+      <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
       <label>Seu nome<input name="nome" required autocomplete="name" placeholder="Como podemos te chamar?"></label>
       <label>Loja de preferência
         <select name="loja">
@@ -424,6 +425,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     if(!nome){f.nome.focus();return;}
     // Lead e Contact (Meta) e generate_lead (GA4) saem do GTM a partir deste evento
     window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:'lead_whatsapp',marca:'diniz',loja:f.loja.value,interesse:f.interesse.value});
+    try{
+      var d=new FormData(f);d.append('marca','diniz');d.append('pagina',location.href.split('#')[0]);
+      var q=new URLSearchParams(location.search);
+      ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(function(k){if(q.get(k))d.append(k,q.get(k));});
+      fetch('/enviar.php',{method:'POST',body:d,keepalive:true}).catch(function(){});
+    }catch(err){}
     var msg='Olá! Sou '+nome+'. Vim pelo site da '+MARCA+' Natal. Tenho interesse em: '+f.interesse.value+'. Loja de preferência: '+f.loja.value+'. Quero agendar meu atendimento.';
     window.open(wa(msg),'_blank','noopener');
   });

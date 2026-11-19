@@ -11,6 +11,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Gerar configuração do formulário (destinatários vêm do secret FORM_TO)
+        env:
+          FORM_TO: ${{ secrets.FORM_TO }}
+        run: |
+          test -n "$FORM_TO"
+          printf "<?php\nreturn ['to' => '%s', 'from' => 'site@oticasdiniznatal.com.br'];\n" "$FORM_TO" > config-form.php
+
       - name: Enviar arquivos por FTPS
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
